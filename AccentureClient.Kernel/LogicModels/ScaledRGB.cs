@@ -1,9 +1,9 @@
-﻿using ImageColorAnalysis.ImplementationModels;
+﻿using AccentureClient.Kernel.ImplementationModels;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace ImageColorAnalysis
+namespace AccentureClient.Kernel
 {
     public struct ScaledRGB : IEqualityComparer<ScaledRGB>
     {

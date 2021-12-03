@@ -1,5 +1,5 @@
-﻿using ImageColorAnalysis;
-using ImageColorAnalysis.ImplementationModels;
+﻿using AccentureClient.Kernel;
+using AccentureClient.Kernel.ImplementationModels;
 using System;
 using System.Drawing;
 using System.Linq;

@@ -7,8 +7,8 @@
     <ProjectGuid>{572445E7-C04B-4588-9AA6-174ABB7B55AA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ImageColorAnalysis</RootNamespace>
-    <AssemblyName>ImageColorAnalysis</AssemblyName>
+    <RootNamespace>AccentureClient.Kernel</RootNamespace>
+    <AssemblyName>AccentureClient.Kernel</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

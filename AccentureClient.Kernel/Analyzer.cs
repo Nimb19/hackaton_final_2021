@@ -1,11 +1,11 @@
-﻿using ImageColorAnalysis.ImplementationModels;
+﻿using AccentureClient.Kernel.ImplementationModels;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using Tesseract;
 
-namespace ImageColorAnalysis
+namespace AccentureClient.Kernel
 {
     public class Analyzer
     {

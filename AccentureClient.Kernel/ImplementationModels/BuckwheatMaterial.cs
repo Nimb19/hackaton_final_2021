@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace ImageColorAnalysis.ImplementationModels
+namespace AccentureClient.Kernel.ImplementationModels
 {
     public class BuckwheatMaterial : IRawMaterial
     {
