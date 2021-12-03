@@ -1,5 +1,7 @@
 import cv2 as cv
 from sys import argv
+from PIL import Image
+
 
 src = cv.imread(argv[1]) #'/Users/nsamoilove/Public/VSC/hackaton_final_2021/Python Modules/Photo/zerno.jpg'
 gr = cv.cvtColor(src, cv.COLOR_BGR2GRAY)
@@ -47,5 +49,8 @@ min_y = int(min(lt_y))+35
 #print(min_x,min_y)
 
 src_top = cropping(src,min_y,max_y,min_x,max_x)
-   
-cv.imwrite('result_zerno.jpg', src_top)
+
+cv.imwrite(argv[2], src_top)
+
+
+
