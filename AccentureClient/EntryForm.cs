@@ -17,10 +17,12 @@ namespace ImageColorAnalizer.UI
 
         private void EntryButton_Click(object sender, EventArgs e)
         {
-            SerializeEntryData();
-
             var login = loginBox.Text.Trim();
             var server = addressBox.Text.Trim();
+
+            if (!string.IsNullOrWhiteSpace(login)
+                && !string.IsNullOrWhiteSpace(server))
+                SerializeEntryData();
 
             this.Hide();
             var clientForm = new ClientForm(login, server);
