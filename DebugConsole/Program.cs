@@ -1,6 +1,6 @@
 ﻿using ImageColorAnalysis;
+using ImageColorAnalysis.ImplementationModels;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -11,17 +11,16 @@ namespace DebugConsole
     {
         static void Main(string[] args)
         {
-            var similarityTransition = 256;
-            var bitmap = new Bitmap(@"D:\РАБОЧИЙ СТОЛ\photo_2021-12-03_02-43-28 (2).jpg"); // "D:\РАБОЧИЙ СТОЛ\Картинки\11Hvl06T_WE.jpg" 
+            var bitmap = new Bitmap(@"D:\РАБОЧИЙ СТОЛ\photo_2021-12-03_02-25-01.jpg"); 
 
-            var colors = GeneratorImageColorPalette.GetImageColor(bitmap);
+            var material = BuckwheatMaterial.Instance;
+            var colors = GeneratorImageColorPalette.GetImageColor(bitmap, material);
             foreach (var color in colors.OrderByDescending(x => x.Value))
                 Console.WriteLine($"{color.Key} Count={color.Value}");
 
             Console.WriteLine();
 
-            // Не работает
-            var percent = Analyzer.GetPercentOfNormalGrains(similarityTransition, colors
+            var percent = Analyzer.GetPercentOfNormalGrains(colors, material
                 , out var notSuccessColor, out var successColor);
             Console.WriteLine($"Similarity relation (256) successPercent: {percent}%");
             Console.WriteLine($"[Success={successColor}; NotSuccessColor={notSuccessColor}]");
