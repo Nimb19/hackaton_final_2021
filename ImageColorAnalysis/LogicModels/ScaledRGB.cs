@@ -7,11 +7,7 @@ namespace ImageColorAnalysis
 {
     public struct ScaledRGB : IEqualityComparer<ScaledRGB>
     {
-        private const int MaximumDeviationForLightPixels = 25;
-        private const int BorderOfLightPixels = 600;
-
         public int ScaleSize { get; }
-        public CompareDiapasonParameters CompareParameters { get; }
 
         public double R { get; set; }
         public double G { get; set; }
@@ -21,7 +17,7 @@ namespace ImageColorAnalysis
         public double OrigG { get; set; }
         public double OrigB { get; set; }
 
-        public ScaledRGB(Color color, int scale, CompareDiapasonParameters compareParameters)
+        public ScaledRGB(Color color, int scale)
         {
             ScaleSize = scale;
 
@@ -32,8 +28,6 @@ namespace ImageColorAnalysis
             R = Math.Round(((double)color.R / 256) * ScaleSize);
             G = Math.Round(((double)color.G / 256) * ScaleSize);
             B = Math.Round(((double)color.B / 256) * ScaleSize);
-
-            CompareParameters = compareParameters;
         }
 
         public static ScaledRGB CreateComparerInstance
@@ -42,22 +36,18 @@ namespace ImageColorAnalysis
         public bool IsIncludedInTheRange(IRawMaterial materialParameters)
             => IsIncludedInTheRange(
                   materialParameters.LowerSuccessDiapason
-                , materialParameters.UpperSuccessDiapason);
+                , materialParameters.UpperSuccessDiapason
+                , materialParameters.PermissibleDeviations);
 
-        public bool IsIncludedInTheRange(Color lowerDiapason, Color upperDiapason)
+        public bool IsIncludedInTheRange(Color lowerDiapason, Color upperDiapason
+            , (int LowerDev, int UpperDev) permissibleDeviations)
         {
-            var cleanSum = OrigR + OrigG + OrigB;
-            if (cleanSum > BorderOfLightPixels)
-                return IsNormalParameters(true, cleanSum);
+            if ((CheckLowerDiapason(lowerDiapason)
+                && CheckUpperDiapason(upperDiapason))
+                && IsNormalParameters(permissibleDeviations))
+                return true;
             else
-            {
-                if ((CheckLowerDiapason(lowerDiapason)
-                    && CheckUpperDiapason(upperDiapason))
-                    && IsNormalParameters())
-                    return true;
-                else
-                    return false;
-            }
+                return false;
         }
 
         private bool CheckLowerDiapason(Color lowerDiapason)
@@ -70,33 +60,39 @@ namespace ImageColorAnalysis
             return (OrigR < upperDiapason.R) && (OrigG < upperDiapason.G) && OrigB < (upperDiapason.B);
         }
 
-        public bool IsNormalParameters(bool checkAsLightColor = false, double? cleanSum = null)
+        public bool IsNormalParameters((int LowerDev, int UpperDev) permissibleDeviations)
         {
-            if (checkAsLightColor)
-            {
-                var avg = cleanSum.Value / 3;
+            var avg = (OrigR + OrigG + OrigB) / 3;
 
-                if    (Math.Abs(avg - OrigR) < MaximumDeviationForLightPixels
-                    && Math.Abs(avg - OrigG) < MaximumDeviationForLightPixels
-                    && Math.Abs(avg - OrigB) < MaximumDeviationForLightPixels)
+            Func<double, double> getDevelation = (double origValue) => Math.Abs(avg - origValue);
+
+            var develationR = getDevelation(OrigR);
+            var develationG = getDevelation(OrigG);
+            var develationB = getDevelation(OrigB);
+
+            if (avg > 200)
+            {
+                if    (isContainsInRange(develationR, 0, 80)
+                    && isContainsInRange(develationG, 0, 70) 
+                    && isContainsInRange(develationB, 0, 80))
                     return true;
                 else
                     return false;
             }
             else
             {
-                var avg = (OrigR * CompareParameters.RGBCoefficients[0]
-                         + OrigG * CompareParameters.RGBCoefficients[1]
-                         + OrigB * CompareParameters.RGBCoefficients[2])
-                         / 3;
-
-                if (Math.Abs(avg - OrigR) < CompareParameters.PermissibleDeviations[0]
-                    && Math.Abs(avg - OrigG) < CompareParameters.PermissibleDeviations[1]
-                    && Math.Abs(avg - OrigB) < CompareParameters.PermissibleDeviations[2])
+                if    (isContainsInRange(develationR)
+                    && isContainsInRange(develationG
+                        , 0, permissibleDeviations.LowerDev) 
+                    && isContainsInRange(develationB))
                     return true;
                 else
                     return false;
             }
+
+            bool isContainsInRange(double develation, int? lowerDev = null, int? upperDev = null)
+                => (develation >= (lowerDev ?? permissibleDeviations.LowerDev))
+                && (develation <= (upperDev ?? permissibleDeviations.UpperDev));
         }
 
         #region Redefined methods

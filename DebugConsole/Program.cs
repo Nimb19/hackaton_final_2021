@@ -16,7 +16,7 @@ namespace DebugConsole
             var material = BuckwheatMaterial.Instance;
             var colors = GeneratorImageColorPalette.GetImageColor(bitmap, material);
             foreach (var color in colors.OrderByDescending(x => x.Value))
-                Console.WriteLine($"{color.Key} Count={color.Value}");
+                Console.WriteLine($"{color.Key} Count={color.Value} {color.Key.IsIncludedInTheRange(material)}");
 
             Console.WriteLine();
 

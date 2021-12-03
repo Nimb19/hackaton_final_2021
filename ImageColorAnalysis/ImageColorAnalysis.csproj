@@ -45,7 +45,6 @@
     <Compile Include="Analyzer.cs" />
     <Compile Include="ImplementationModels\BuckwheatMaterial.cs" />
     <Compile Include="ImplementationModels\IRawMaterial.cs" />
-    <Compile Include="LogicModels\CompareDiapasonParameters.cs" />
     <Compile Include="LogicModels\GeneratorImageColorPalette.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LogicModels\ScaledRGB.cs" />

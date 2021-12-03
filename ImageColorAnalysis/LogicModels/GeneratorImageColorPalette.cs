@@ -15,8 +15,7 @@ namespace ImageColorAnalysis
             {
                 for (var y = 0; y < bitmap.Height; y += step)
                 {
-                    var thisColor = new ScaledRGB(bitmap.GetPixel(x, y), scale
-                        , materialParameters.CompareDiapasonParameters);
+                    var thisColor = new ScaledRGB(bitmap.GetPixel(x, y), scale);
 
                     if (colors.TryGetValue(thisColor, out var value))
                         colors[thisColor] = value + 1;

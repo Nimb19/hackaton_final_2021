@@ -5,7 +5,10 @@ namespace ImageColorAnalysis.ImplementationModels
     public interface IRawMaterial
     {
         string Name { get; }
-        CompareDiapasonParameters CompareDiapasonParameters { get; }
+
+        /// <summary> Допустимый диапазон </summary>
+        (int LowerDev, int UpperDev) PermissibleDeviations { get; }
+
         byte[] LowerSuccessDiapasonArray { get; } 
         Color LowerSuccessDiapason { get; }
 
