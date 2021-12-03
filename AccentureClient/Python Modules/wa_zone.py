@@ -1,5 +1,9 @@
 import cv2 as cv
-src = cv.imread('/Users/nsamoilove/Public/VSC/hackaton_final_2021/Python Modules/Photo/zerno.jpg')
+from sys import argv
+from PIL import Image
+
+
+src = cv.imread(argv[1]) #'/Users/nsamoilove/Public/VSC/hackaton_final_2021/Python Modules/Photo/zerno.jpg'
 gr = cv.cvtColor(src, cv.COLOR_BGR2GRAY)
 
 bl = cv.medianBlur(gr, 5)
@@ -42,8 +46,11 @@ max_y = int(max(lt_y))-35
 min_x = int(min(lt_x))+35
 min_y = int(min(lt_y))+35
 #print(max_x,max_y)
-# print(min_x,min_y)
+#print(min_x,min_y)
 
 src_top = cropping(src,min_y,max_y,min_x,max_x)
-      
-cv.imwrite('result_zerno.jpg', src_top)
+
+cv.imwrite(argv[2], src_top)
+
+
+
