@@ -1,8 +1,8 @@
-﻿using ImageColorAnalysis.ImplementationModels;
+﻿using AccentureClient.Kernel.ImplementationModels;
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace ImageColorAnalysis
+namespace AccentureClient.Kernel
 {
     public static class GeneratorImageColorPalette
     {

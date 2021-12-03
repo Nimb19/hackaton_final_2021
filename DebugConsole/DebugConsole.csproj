@@ -52,9 +52,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ImageColorAnalysis\ImageColorAnalysis.csproj">
+    <ProjectReference Include="..\AccentureClient.Kernel\AccentureClient.Kernel.csproj">
       <Project>{572445e7-c04b-4588-9aa6-174abb7b55aa}</Project>
-      <Name>ImageColorAnalysis</Name>
+      <Name>AccentureClient.Kernel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

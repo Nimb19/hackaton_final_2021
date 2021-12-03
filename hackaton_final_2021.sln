@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageColorAnalysis", "ImageColorAnalysis\ImageColorAnalysis.csproj", "{572445E7-C04B-4588-9AA6-174ABB7B55AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccentureClient.Kernel", "AccentureClient.Kernel\AccentureClient.Kernel.csproj", "{572445E7-C04B-4588-9AA6-174ABB7B55AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageColorAnalizer.UI", "ImageColorAnalizer.UI\ImageColorAnalizer.UI.csproj", "{BAC26207-10D9-49E7-9086-A794CD46EA4D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccentureClient", "AccentureClient\AccentureClient.csproj", "{BAC26207-10D9-49E7-9086-A794CD46EA4D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugConsole", "DebugConsole\DebugConsole.csproj", "{97F42C78-DE96-4E60-8B3E-864B5659D90A}"
 EndProject
