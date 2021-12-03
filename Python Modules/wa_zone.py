@@ -1,5 +1,5 @@
 import cv2 as cv
-src = cv.imread('/Users/nsamoilove/Desktop/zerno.jpg')
+src = cv.imread('/Users/nsamoilove/Public/VSC/hackaton_final_2021/Python Modules/Photo/zerno.jpg')
 gr = cv.cvtColor(src, cv.COLOR_BGR2GRAY)
 
 bl = cv.medianBlur(gr, 5)
