@@ -1,4 +1,4 @@
-﻿namespace ImageColorAnalizer.UI
+﻿namespace AccentureClient
 {
     partial class ClientForm
     {
@@ -118,6 +118,7 @@
             // 
             this.pictureBoxCamera.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxCamera.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxCamera.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCamera.Image")));
             this.pictureBoxCamera.Location = new System.Drawing.Point(3, 27);
             this.pictureBoxCamera.Name = "pictureBoxCamera";
             this.pictureBoxCamera.Size = new System.Drawing.Size(896, 768);
@@ -184,7 +185,6 @@
             this.pictureBoxLastPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxLastPhoto.TabIndex = 12;
             this.pictureBoxLastPhoto.TabStop = false;
-            this.pictureBoxLastPhoto.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxLastPhoto_Paint);
             // 
             // menuStrip2
             // 
@@ -267,6 +267,7 @@
             // 
             // labelMaterialType
             // 
+            this.labelMaterialType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelMaterialType.Location = new System.Drawing.Point(227, 757);
             this.labelMaterialType.Name = "labelMaterialType";
             this.labelMaterialType.Size = new System.Drawing.Size(100, 21);
@@ -276,6 +277,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(12, 757);
             this.label8.Name = "label8";
@@ -306,6 +308,7 @@
             // 
             // pictureBoxPrephoto
             // 
+            this.pictureBoxPrephoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBoxPrephoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxPrephoto.Location = new System.Drawing.Point(16, 387);
             this.pictureBoxPrephoto.Name = "pictureBoxPrephoto";
@@ -316,6 +319,7 @@
             // 
             // labelLastTimeUpdInfo
             // 
+            this.labelLastTimeUpdInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelLastTimeUpdInfo.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.labelLastTimeUpdInfo.Location = new System.Drawing.Point(217, 789);
             this.labelLastTimeUpdInfo.Name = "labelLastTimeUpdInfo";
@@ -326,6 +330,7 @@
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.label16.Location = new System.Drawing.Point(26, 789);
@@ -336,6 +341,7 @@
             // 
             // labelPercentQualityMaterial
             // 
+            this.labelPercentQualityMaterial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelPercentQualityMaterial.Location = new System.Drawing.Point(227, 722);
             this.labelPercentQualityMaterial.Name = "labelPercentQualityMaterial";
             this.labelPercentQualityMaterial.Size = new System.Drawing.Size(100, 21);
@@ -345,6 +351,7 @@
             // 
             // labelResultInfo
             // 
+            this.labelResultInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelResultInfo.Location = new System.Drawing.Point(122, 688);
             this.labelResultInfo.Name = "labelResultInfo";
             this.labelResultInfo.Size = new System.Drawing.Size(205, 21);
@@ -354,6 +361,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 722);
             this.label4.Name = "label4";
@@ -363,6 +371,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 688);
             this.label3.Name = "label3";
@@ -372,6 +381,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.Location = new System.Drawing.Point(12, 336);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(333, 48);
@@ -540,11 +550,11 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.PictureBox pictureBoxLastPhoto;
         private System.Windows.Forms.ToolStripMenuItem обработатьВыбранноеИзображениеToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBoxCamera;
         private System.Windows.Forms.Label labelMaterialType;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numericUpDownErrorRate;
+        private System.Windows.Forms.PictureBox pictureBoxCamera;
     }
 }
 

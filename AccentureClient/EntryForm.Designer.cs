@@ -1,4 +1,4 @@
-﻿namespace ImageColorAnalizer.UI
+﻿namespace AccentureClient
 {
     partial class EntryForm
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace ImageColorAnalizer.UI
+namespace AccentureClient
 {
     static class Program
     {

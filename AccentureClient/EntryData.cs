@@ -1,4 +1,4 @@
-﻿namespace ImageColorAnalizer.UI
+﻿namespace AccentureClient
 {
     public class EntryData
     {

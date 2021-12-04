@@ -1,11 +1,11 @@
-﻿using ImageColorAnalizer.UI.Adapter;
+﻿using AccentureClient.Adapter;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ImageColorAnalizer.UI
+namespace AccentureClient
 {
     public partial class EntryForm : Form
     {
@@ -24,7 +24,7 @@ namespace ImageColorAnalizer.UI
                 && !string.IsNullOrWhiteSpace(server))
                 SerializeEntryData();
 
-            this.Hide();
+            Hide();
             var clientForm = new ClientForm(login, server);
             clientForm.ShowDialog();
 

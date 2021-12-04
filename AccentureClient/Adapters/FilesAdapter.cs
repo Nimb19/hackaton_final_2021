@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Text;
 
-namespace ImageColorAnalizer.UI.Adapter
+namespace AccentureClient.Adapter
 {
     public static class FilesAdapter
     {
