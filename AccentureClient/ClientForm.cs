@@ -40,13 +40,14 @@ namespace AccentureClient
             {
                 cancellationToken.ThrowIfCancellationRequested();
 
-                var camera = new Bitmap(urlToCamera);
+                //var camera = new Bitmap(urlToCamera);
 
-                if (camera.Width < camera.Height)
-                    camera.RotateFlip(RotateFlipType.Rotate90FlipX);
+                //if (camera.Width < camera.Height)
+                //    camera.RotateFlip(RotateFlipType.Rotate90FlipX);
 
-                Animate(pictureBoxCamera, true);
-                pictureBoxCamera.Image = camera;
+                //Animate(pictureBoxCamera, true);
+                //pictureBoxCamera.Image = camera;
+
                 //ImageAnimator.Animate(camera, new EventHandler(this.OnFrameChanged));
                 
                 Task.Delay(5000).Wait();
@@ -100,6 +101,11 @@ namespace AccentureClient
             pictureBoxLastPhoto.Image = bitmap;
             pictureBoxPrephoto.Image = bitmap;
             UpdateTime();
+
+            if (resultInfo == ResultStatus.BadQuality)
+                MessageBox.Show("Плохая оценка качества на зоне погрузки №1, камере №1." +
+                    "\r\n\r\nСкриншот с шаблоном отчёта успешно сохранены", "Внимание"
+                    , MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private static ResultStatus ProcessThePhoto(Bitmap bitmap, IRawMaterial material, double errorRate

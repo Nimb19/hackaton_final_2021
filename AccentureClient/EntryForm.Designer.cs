@@ -44,7 +44,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(156, 109);
+            this.label1.Location = new System.Drawing.Point(159, 109);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 22);
             this.label1.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(156, 182);
+            this.label2.Location = new System.Drawing.Point(159, 182);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 22);
             this.label2.TabIndex = 1;
@@ -82,10 +82,10 @@
             // 
             // passwordBox
             // 
-            this.passwordBox.Location = new System.Drawing.Point(81, 208);
+            this.passwordBox.Location = new System.Drawing.Point(84, 208);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(230, 27);
-            this.passwordBox.TabIndex = 5;
+            this.passwordBox.TabIndex = 1;
             this.passwordBox.UseSystemPasswordChar = true;
             // 
             // entryButton
@@ -94,7 +94,7 @@
             this.entryButton.Location = new System.Drawing.Point(52, 390);
             this.entryButton.Name = "entryButton";
             this.entryButton.Size = new System.Drawing.Size(293, 52);
-            this.entryButton.TabIndex = 6;
+            this.entryButton.TabIndex = 4;
             this.entryButton.Text = "Войти";
             this.entryButton.UseVisualStyleBackColor = true;
             this.entryButton.Click += new System.EventHandler(this.EntryButton_Click);
@@ -105,15 +105,15 @@
             this.addressBox.Location = new System.Drawing.Point(69, 299);
             this.addressBox.Name = "addressBox";
             this.addressBox.Size = new System.Drawing.Size(254, 29);
-            this.addressBox.TabIndex = 7;
+            this.addressBox.TabIndex = 2;
             // 
             // loginBox
             // 
             this.loginBox.FormattingEnabled = true;
-            this.loginBox.Location = new System.Drawing.Point(81, 135);
+            this.loginBox.Location = new System.Drawing.Point(84, 135);
             this.loginBox.Name = "loginBox";
             this.loginBox.Size = new System.Drawing.Size(230, 29);
-            this.loginBox.TabIndex = 8;
+            this.loginBox.TabIndex = 0;
             // 
             // rememberMeBox
             // 
@@ -122,7 +122,7 @@
             this.rememberMeBox.Location = new System.Drawing.Point(205, 340);
             this.rememberMeBox.Name = "rememberMeBox";
             this.rememberMeBox.Size = new System.Drawing.Size(117, 25);
-            this.rememberMeBox.TabIndex = 9;
+            this.rememberMeBox.TabIndex = 3;
             this.rememberMeBox.Text = "Запомнить";
             this.rememberMeBox.UseVisualStyleBackColor = true;
             // 
